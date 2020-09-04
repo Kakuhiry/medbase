@@ -1,3 +1,133 @@
+html{
+  background-image: linear-gradient(to right bottom, #ffffff, #edeff2, #d9dfe6, #c3d1d7, #adc3c6);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+p, a, li, span, label, input, text, textarea{
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.header{
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 .title {
   text-align: center;
+}
+
+.nav-bar-left{
+  padding-left: 2%;
+  padding-top: 3.5%;
+  display: flex;
+}
+
+.nav-bar-right{
+  padding-left: 65%;
+  padding-top: 3.5%;
+}
+
+.main-text-left{
+  font-size: 60px;
+  width: 100%;
+  font-weight: 300;
+}
+
+
+.main-body{
+  display: flex;
+}
+
+.main-body-left{
+  padding-top: 5%;
+  padding-left: 5%;
+  font-size: 60px;
+  width: 40%;
+  font-weight: 300;
+}
+
+.main-body-right{
+  padding-right: 20px;
+  width: auto;
+  height: auto;
+  border-color: black;
+}
+
+.right-pic{
+  width: 840px;
+  height: 840px;
+  padding-left: 90px;
+}
+
+.pic-container {
+  width: 950px;
+  height: 600px;
+}
+
+#button-3 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 25%;
+}
+
+#button-3 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #BFC0C0;
+  position: absolute;
+  transition: all .5s ease-Out;
+  top: 20px;
+  left: 70px;
+}
+
+#button-3:hover #circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -70px;
+}
+
+#button-3:hover a {
+  color: #2D3142;
+}
+
+.logo{
+  width: 138px;
+  height: 100px;
+  padding-left: 2%;
+  padding-top: 2%;
 }
