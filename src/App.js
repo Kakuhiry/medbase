@@ -30,19 +30,25 @@ function App() {
             <p className= "secondary-text-left">
             Tu salud es muy importante para nosotros. Nuestro objetivo es proveer al publico un facil acceso a su historial medico, sin importar donde se encuentre.
             </p>
-            <div class="button" id="button-3">
-              <div id="circle"></div>
-              <a className="enroll" href="/">Let's Go!</a>
+            </div>
+          <div className= "main-body-right">
+            <img className="right-pic" src={require('/home/elvis/Documents/GitHub/medbase/src/images/fimathing.png')} alt= "Not found"/>
+          </div>
+        </div>
+          <div class="box-1">
+            <div class="btn btn-one">
+              <span>Enroll today</span>
             </div>
           </div>
-          <div className= "main-body-right">
-            <div className= "pic-container">
-              <img className="right-pic" src={require('/home/elvis/Documents/GitHub/medbase/src/images/fimathing.png')} alt= "Not found"/>
-              </div>
+          <div className= "socials">
+            <ul>
+              <li><img className= "sLogo" id= "fLogo" src={require("/home/elvis/Documents/GitHub/medbase/src/images/facebook-logo.png")} alt="1"/></li>
+              <li><img className= "sLogo" id= "iLogo" src={require("/home/elvis/Documents/GitHub/medbase/src/images/Logo-instagram.png")} alt="2"/></li>
+              <li><img className= "sLogo" id= "tLogo" src={require("/home/elvis/Documents/GitHub/medbase/src/images/twitter-logo.png")} alt="3"/></li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
