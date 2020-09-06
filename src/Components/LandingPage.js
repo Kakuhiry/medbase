@@ -1,5 +1,5 @@
 import React from 'react';
-import '/home/elvis/Documents/GitHub/medbase/src/Styles/LangingPageStyle.css';
+import '../Styles/LangingPageStyle.css';
 
 function LandingPage() {
   return (
