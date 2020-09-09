@@ -1,4 +1,6 @@
 import React from 'react';
+import '../Styles/LoginStyle.css';
+import '../Styles/UniversalStyling.css';
 
 class InputField extends React.Component {
 

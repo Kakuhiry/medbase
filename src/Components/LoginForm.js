@@ -3,6 +3,7 @@ import UserStore    from '../Stores/UserStore';
 import InputField   from '../Components/InputField'
 import SubmitButton from '../Components/SubmitButton'
 import '../Styles/LoginStyle.css';
+import '../Styles/UniversalStyling.css';
 
 class LoginForm extends React.Component {
 
@@ -17,7 +18,7 @@ class LoginForm extends React.Component {
 
   setInputValue(property, val){
     val = val.trim();
-    if (val.length > 12){
+    if (val.length > 14){
       return;
     }
     this.setState({
@@ -84,28 +85,37 @@ class LoginForm extends React.Component {
   render(){
     return (
       <div className="loginForm">
-        Log import
+        
+        <div className= "upperText">
+            <h2 className= "healthText">Health everywhere</h2>
+        </div>
 
-
-        <InputField
-          type = 'text'
-          placeholder= 'Username'
-          value= {this.state.username ? this.state.username : ''}
-          onChange= { (val) => this.setInputValue('username', val)} 
-        />
-
-        <InputField
-          type = 'password'
-          placeholder= 'Password'
-          value= {this.state.password ? this.state.password : ''}
-          onChange= { (val) => this.setInputValue('password', val)} 
-        />
-
-        <SubmitButton
-          text = 'Login'
-          disabled= {this.state.buttonDisabled}
-          onClick={()=> this.doLogin()}
-        />
+        <div className= 'form-sec'>
+          <div className= 'usernameF'>
+            <InputField
+              type = 'text'
+              placeholder= 'Username'
+              value= {this.state.username ? this.state.username : ''}
+              onChange= { (val) => this.setInputValue('username', val)} 
+            />
+          </div>
+          <div className= 'passwordF'>
+            <InputField
+              type = 'password'
+              placeholder= 'Password'
+              value= {this.state.password ? this.state.password : ''}
+              onChange= { (val) => this.setInputValue('password', val)} 
+            />
+          </div>
+          <div className= 'login-btn'>
+            <SubmitButton
+              className= 'btn btn-one'
+              text = 'Login'
+              disabled= {this.state.buttonDisabled}
+              onClick={()=> this.doLogin()}
+            />
+          </div>  
+        </div>
       </div>
     );
   }

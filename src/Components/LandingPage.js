@@ -1,12 +1,13 @@
 import React from 'react';
 import '../Styles/LangingPageStyle.css';
+import '../Styles/UniversalStyling.css';
 
 function LandingPage() {
   return (
     <div className="LandingPage">
       <div className= "grad">
         <div className = "header">
-          <img className="logo" src={require('/home/elvis/Documents/GitHub/medbase/src/images/3533224112_e75c18de-aef7-47fb-bf36-5748bd89b1bf.png')} alt= "Not found"/>
+          <img className="logo" src={require('../images/MedBase-Logo.png')} alt= "Not found"/>
           <div className= "nav-bar-left">
             <ul>
               <li><a href="/">Home</a></li>
