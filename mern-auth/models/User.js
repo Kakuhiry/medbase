@@ -14,9 +14,35 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  date: {
-    type: Date,
-    default: Date.now
+  password2: {
+    type: String,
+    required: true
+  },
+  phoneNumber: {
+    type: String,
+    required: true
+  },
+  birthdate: {
+    type: String,
+    required: true
+  },
+  direction1: {
+    type: String,
+    required: true
+  },
+  
+  direction2: {
+    type: String,
+    required: false
+  },
+  
+  hospital: {
+    type: String,
+    required: true
+  },
+  country: {
+    type: String,
+    required: true
   }
 });
 module.exports = User = mongoose.model("users", UserSchema);
