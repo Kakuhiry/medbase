@@ -88,10 +88,10 @@ router.post("/register", (req, res) => {
           birthdate: req.body.birthdate,
           direction1: req.body.direction1,
           country: req.body.country,
-          hospital: req.body.hospital
         });
 
         const newDoctor = new Doctor({
+          name: newUser.name,
           workingHospital: req.body.workingHospital,
           id_User: newUser._id,
           speciality: req.body.speciality

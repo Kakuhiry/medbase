@@ -10,7 +10,6 @@ module.exports = function validateRegisterInput(data) {
   data.phoneNumber = !isEmpty(data.phoneNumber) ? data.phoneNumber : "";
   data.birthdate = !isEmpty(data.birthdate) ? data.birthdate : "";
   data.direction1 = !isEmpty(data.direction1) ? data.direction1 : "";
-  data.hospital = !isEmpty(data.hospital) ? data.hospital : "";
   data.country = !isEmpty(data.country) ? data.country : "";
 
   // Name checks
@@ -44,9 +43,6 @@ if (!Validator.equals(data.password, data.password2)) {
   }
   if (Validator.isEmpty(data.direction1)) {
     errors.direction1 = "direction1 field is required";
-  }
-  if (Validator.isEmpty(data.hospital)) {
-    errors.hospital = "hospital field is required";
   }
   if (Validator.isEmpty(data.country)) {
     errors.country = "Password field is required";

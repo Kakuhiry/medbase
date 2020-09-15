@@ -4,6 +4,7 @@ module.exports = function validateConsultInput(data) {
   let errors = {};
 // Convert empty fields to an empty string so we can use validator functions
   data.userID = !isEmpty(data.userID) ? data.userID : "";
+  data.doctorID = !isEmpty(data.doctorID) ? data.doctorID : "";
   data.hospital = !isEmpty(data.hospital) ? data.hospital : "";
   data.doctor = !isEmpty(data.doctor) ? data.doctor : "";
   data.patient = !isEmpty(data.patient) ? data.patient : "";
@@ -13,6 +14,9 @@ module.exports = function validateConsultInput(data) {
 // Name checks
   if (Validator.isEmpty(data.userID)) {
     errors.userID = "user ID field is required";
+  }
+  if (Validator.isEmpty(data.doctorID)) {
+    errors.doctorID = "doctor ID field is required";
   }
   if (Validator.isEmpty(data.hospital)) {
     errors.hospital = "Hospital name field is required";

@@ -35,11 +35,6 @@ const UserSchema = new Schema({
     type: String,
     required: false
   },
-  
-  hospital: {
-    type: String,
-    required: true
-  },
   country: {
     type: String,
     required: true

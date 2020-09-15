@@ -9,9 +9,13 @@ const ConsultSchema = new Schema({
     type: String,
     required: true
   },
+  doctorID: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
-    rdefault: Date.now
+    default: Date.now
   },
   hospital: {
     type: String,
