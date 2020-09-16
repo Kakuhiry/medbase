@@ -33,7 +33,7 @@ function LandingPage() {
             </p>
             </div>
           <div className= "main-body-right">
-            <img className="right-pic" src={require('/home/elvis/Documents/GitHub/medbase/src/images/fimathing.png')} alt= "Not found"/>
+            <img className="right-pic" src={require('../images/fimathing.png')} alt= "Not found"/>
           </div>
         </div>
           <div class="box-1">
@@ -43,9 +43,9 @@ function LandingPage() {
           </div>
           <div className= "socials">
             <ul>
-              <li><img className= "sLogo" id= "fLogo" src={require("/home/elvis/Documents/GitHub/medbase/src/images/facebook-logo.png")} alt="1"/></li>
-              <li><img className= "sLogo" id= "iLogo" src={require("/home/elvis/Documents/GitHub/medbase/src/images/Logo-instagram.png")} alt="2"/></li>
-              <li><img className= "sLogo" id= "tLogo" src={require("/home/elvis/Documents/GitHub/medbase/src/images/twitter-logo.png")} alt="3"/></li>
+              <li><img className= "sLogo" id= "fLogo" src={require("../images/facebook-logo.png")} alt="1"/></li>
+              <li><img className= "sLogo" id= "iLogo" src={require("../images/Logo-instagram.png")} alt="2"/></li>
+              <li><img className= "sLogo" id= "tLogo" src={require("../images/twitter-logo.png")} alt="3"/></li>
             </ul>
           </div>
         </div>
