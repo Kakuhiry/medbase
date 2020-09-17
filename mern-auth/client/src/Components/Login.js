@@ -1,11 +1,12 @@
 import React        from 'react';
-import {observer}   from 'mobx-react'
+import {observer}   from 'mobx-react';
 import UserStore    from '../Stores/UserStore';
-import LoginForm    from '../Components/LoginForm'
-import InputField   from '../Components/InputField'
-import SubmitButton from '../Components/SubmitButton'
-import '../Styles/UniversalStyling.css';
-import '../Styles/LoginStyle.css';
+import LoginForm   from '../Components/LoginForm';
+import InputField   from '../Components/InputField';
+import SubmitButton from '../Components/SubmitButton';
+import Navbar from './Navbar'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 class Login extends React.Component {
 
@@ -99,15 +100,10 @@ class Login extends React.Component {
 
       return (
         <div className="App">
-          <div className= "log-body">
-            <div className= "left-sec">
-              <LoginForm />
-            </div>
-            <div className= "right-sec">
-              <img className= "log-logo" src={require('../images/HDmedBaseRightPic.png')} alt="1"/>
-            </div>
-            <img className= "medbase-logo" src={require('../images/MedBase-Logo.png')} alt="1"/>
-          </div>
+          <Router>
+            <Navbar />
+            <LoginForm />
+          </Router>
         </div>
       );
     }

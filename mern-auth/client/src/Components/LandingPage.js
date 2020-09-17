@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Styles/LangingPageStyle.css';
-import '../Styles/UniversalStyling.css';
 
 function LandingPage() {
   return (
@@ -31,16 +30,17 @@ function LandingPage() {
             <p className= "secondary-text-left">
             Tu salud es muy importante para nosotros. Nuestro objetivo es proveer al publico un facil acceso a su historial medico, sin importar donde se encuentre.
             </p>
+            <div class="buttonsB">
+                <div class="containerB">
+                    <a href="https://twitter.com/masuwa1018" class="btn1 effect04" data-sm-link-text="Enroll today" target="_blank"><span>Join us</span></a>
+                </div>
+              </div>
             </div>
           <div className= "main-body-right">
             <img className="right-pic" src={require('../images/fimathing.png')} alt= "Not found"/>
           </div>
         </div>
-          <div class="box-1">
-            <div class="btn btn-one">
-              <span>Enroll today</span>
-            </div>
-          </div>
+      
           <div className= "socials">
             <ul>
               <li><img className= "sLogo" id= "fLogo" src={require("../images/facebook-logo.png")} alt="1"/></li>
