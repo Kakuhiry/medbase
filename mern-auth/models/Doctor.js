@@ -4,21 +4,21 @@ const Schema = mongoose.Schema;
 const DoctorSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   workingHospital: {
     type: String,
-    required: true
+    required: true,
   },
 
   id_User: {
     type: String,
-    required: true
+    required: true,
   },
 
   speciality: {
     type: String,
-    required: false
-  }
+    required: false,
+  },
 });
 module.exports = Doctor = mongoose.model("doctors", DoctorSchema);

@@ -2,7 +2,7 @@ const Validator = require("validator");
 const isEmpty = require("is-empty");
 module.exports = function validateConsultInput(data) {
   let errors = {};
-// Convert empty fields to an empty string so we can use validator functions
+  // Convert empty fields to an empty string so we can use validator functions
   data.userID = !isEmpty(data.userID) ? data.userID : "";
   data.doctorID = !isEmpty(data.doctorID) ? data.doctorID : "";
   data.hospital = !isEmpty(data.hospital) ? data.hospital : "";
@@ -11,7 +11,7 @@ module.exports = function validateConsultInput(data) {
   data.description = !isEmpty(data.description) ? data.description : "";
   data.recipes = !isEmpty(data.recipes) ? data.recipes : "";
 
-// Name checks
+  // Name checks
   if (Validator.isEmpty(data.userID)) {
     errors.userID = "user ID field is required";
   }
@@ -21,15 +21,15 @@ module.exports = function validateConsultInput(data) {
   if (Validator.isEmpty(data.hospital)) {
     errors.hospital = "Hospital name field is required";
   }
-// Email checks
+  // Email checks
   if (Validator.isEmpty(data.doctor)) {
     errors.doctor = "Doctor field is required";
-  } 
-// Password checks
+  }
+  // Password checks
   if (Validator.isEmpty(data.patient)) {
     errors.patient = "Patient field is required";
   }
-if (Validator.isEmpty(data.description)) {
+  if (Validator.isEmpty(data.description)) {
     errors.description = "Description field is required";
   }
 
@@ -37,9 +37,8 @@ if (Validator.isEmpty(data.description)) {
     errors.recipes = "recipes field is required";
   }
 
-
-return {
+  return {
     errors,
-    isValid: isEmpty(errors)
+    isValid: isEmpty(errors),
   };
 };

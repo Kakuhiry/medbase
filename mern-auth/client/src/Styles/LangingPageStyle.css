@@ -54,11 +54,13 @@ li a {
   padding-top: 3.5%;
   display: flex;
   text-decoration: none;
+  z-index: 1
 }
 
 .nav-bar-right{
   padding-left: 65%;
   padding-top: 3.5%;
+  z-index: 1
   
 }
 
@@ -89,8 +91,8 @@ li a {
 }
 
 .right-pic{
-  width: 840px;
-  height: 840px;
+  width: 1100px;
+  height: auto;
   padding-left: 90px;
   position: fixed;
   top: 20px;
@@ -103,8 +105,8 @@ li a {
 }
 
 .logo{
-  width: 138px;
-  height: 100px;
+  width: 163px;
+  height: auto;
   padding-left: 2%;
   padding-top: 2%;
 }

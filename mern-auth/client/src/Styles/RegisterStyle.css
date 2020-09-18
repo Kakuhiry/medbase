@@ -1,0 +1,28 @@
+.left-sec-text {
+    width: 500px;
+}
+
+.back-btn {
+    position: relative;
+    padding-top: 50px;
+}
+
+.register-text {
+    padding-right: 400px;
+}
+
+.left-sec {
+    right: 230px;
+}
+
+.register-area {
+    display: flex;
+    position: relative;
+    right: 850px;
+    padding-top: 150px;
+}
+
+.navbar-fixed {
+    right: 350px;
+}
+

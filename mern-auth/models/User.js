@@ -4,40 +4,40 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   password2: {
     type: String,
-    required: true
+    required: true,
   },
   phoneNumber: {
     type: String,
-    required: true
+    required: true,
   },
   birthdate: {
     type: String,
-    required: true
+    required: true,
   },
   direction1: {
     type: String,
-    required: true
+    required: true,
   },
-  
+
   direction2: {
     type: String,
-    required: false
+    required: false,
   },
   country: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 module.exports = User = mongoose.model("users", UserSchema);
