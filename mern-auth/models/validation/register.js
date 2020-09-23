@@ -11,7 +11,7 @@ module.exports = function validateRegisterInput(data) {
   data.birthdate = !isEmpty(data.birthdate) ? data.birthdate : "";
   data.direction1 = !isEmpty(data.direction1) ? data.direction1 : "";
   data.country = !isEmpty(data.country) ? data.country : "";
-
+  data.role = !isEmpty(data.role) ? data.role : "Patient"; 
   // Name checks
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
@@ -47,6 +47,7 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.country)) {
     errors.country = "Password field is required";
   }
+
   return {
     errors,
     isValid: isEmpty(errors),

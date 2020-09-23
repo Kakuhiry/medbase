@@ -2,37 +2,80 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import "../../Styles/DoctorMenuStyle.css";
 class Dashboard extends Component {
-  onLogoutClick = e => {
+  onLogoutClick = (e) => {
     e.preventDefault();
     this.props.logoutUser();
   };
-render() {
+  render() {
     const { user } = this.props.auth;
-return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-        <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-              </p>
-              <p>{user.id}</p>
-            </h4>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Logout
-            </button>
+    return (
+      <div style={{ height: "75vh" }} className="container-valign-wrapper">
+        <div className="header">
+          <div className="doctor-name">
+            <h5>{user.name}</h5>
+          </div>
+        </div>
+        <div className="body-sec">
+          <div className="options-menu">
+            <ul>
+              <li>
+                <a className="btn-enclouser" href="/dashboard/Register">
+                  <div class="main-container">
+                    <section>
+                      <button class="btn btn-blue btn-border">
+                        Registrar paciente
+                      </button>
+                    </section>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a className="btn-enclouser" href="">
+                  <div class="main-container">
+                    <section>
+                      <button class="btn btn-blue btn-border">
+                        Configuracion
+                      </button>
+                    </section>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a className="btn-enclouser" href="">
+                  <div class="main-container">
+                    <section>
+                      <button class="btn btn-blue btn-border">
+                        Buscar Paciente
+                      </button>
+                    </section>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a className="btn-enclouser" href="">
+                  <div class="main-container">
+                    <section>
+                      <button
+                        class="btn btn-blue btn-border"
+                        onClick={this.onLogoutClick}
+                      >
+                        Log out
+                      </button>
+                    </section>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="right-sec">
+            <img
+              className="right-img"
+              src={require("../../images/HDmedBaseRightPic.png")}
+              alt=""
+            />
+            <img className= "main-logo" src={require("../../images/MedBase-Logo.png")} alt=""/>
           </div>
         </div>
       </div>
@@ -41,12 +84,9 @@ return (
 }
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(Dashboard);
+export default connect(mapStateToProps, { logoutUser })(Dashboard);

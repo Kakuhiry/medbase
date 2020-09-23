@@ -23,13 +23,6 @@ class Register extends Component {
     };
   }
 
-  componentDidMount() {
-    // If logged in and user navigates to Register page, should redirect them to dashboard
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -64,7 +57,7 @@ class Register extends Component {
       <Navbar/>
         <div className="row">
           <div className="back-btn">
-            <Link to="/" className="btn-flat waves-effect">
+            <Link to="/dashboard" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link>
@@ -75,7 +68,7 @@ class Register extends Component {
                 <b>Register</b> below
               </h4>
               <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
+                Insert your information in the fields below
               </p>
             </div>
           </div>

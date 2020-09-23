@@ -1,0 +1,48 @@
+.logo-med {
+    position: relative;
+    left: 1160px;
+    bottom: 40px;
+    width: 150px;
+    height: auto;
+}
+
+
+
+.history-text {
+    position: relative;
+    width: 470px;
+}
+
+.patient-name {
+    position: relative;
+    bottom: 50px;
+    padding-bottom: 40px;
+}
+
+.filters {
+    display: flex;
+    position: relative;
+    right: 15px;
+    bottom: 80px;
+}
+
+.container-valign-wrapper{ 
+    margin: 4%;
+}
+
+.filter {
+    font-size: 20px;
+    border-right: 2px solid #C1C1C1;
+}
+.filterr{
+    font-size: 20px;
+}
+
+.consults-box {
+    position: relative;
+    background-color: #EFEFEF;
+    opacity: 0.4;
+    border: 2px solid black;
+    height: 60%;
+    bottom: 60px;
+}

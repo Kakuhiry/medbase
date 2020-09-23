@@ -36,6 +36,7 @@ router.post("/register", (req, res) => {
         direction1: req.body.direction1,
         country: req.body.country,
         hospital: req.body.hospital,
+        role: req.body.role
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
@@ -78,6 +79,7 @@ router.post("/register/doctor", (req, res) => {
         birthdate: req.body.birthdate,
         direction1: req.body.direction1,
         country: req.body.country,
+        role: req.body.role
       });
 
       const newDoctor = new Doctor({
@@ -101,7 +103,7 @@ router.post("/register/doctor", (req, res) => {
               .then((user) => res.json(user))
               .catch((err) => console.log(err));
           } catch {
-            console.log("fuck you");
+            console.log("Unexpected error");
           }
         });
       });
@@ -138,6 +140,7 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           name: user.name,
+          role: user.role
         };
         // Sign token
         jwt.sign(
@@ -151,6 +154,7 @@ router.post("/login", (req, res) => {
               success: true,
               token: "Bearer " + token,
               user_ID: user.id,
+              user_Name: user.name
             });
           }
         );

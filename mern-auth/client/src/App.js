@@ -9,6 +9,7 @@ import LandingPage from "./Components/LandingPage.js";
 import Login from "./Components/Login.js";
 import Register from "./Components/Register";
 import NavBar from "./Components/Navbar";
+import MainMenu from "./Components/dashboard/MainMenu"
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -39,10 +40,13 @@ function App() {
         <div className="App">
           <switch>
             <Route path="/login" exact component={Login} />
-            <Route path="/Register" exact component={Register} />
+            
+            
             <Route path="/" exact component={LandingPage} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path= "/menu" component= {MainMenu}/>
+              <PrivateRoute exact path="/dashboard/Register" exact component={Register} />
             </Switch>
           </switch>
         </div>

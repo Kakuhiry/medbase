@@ -5,7 +5,7 @@ html{
 
 h1, h2, h3, h4, h5, h6, strong{
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 p, a, li, span, label, input, text, textarea{
@@ -105,10 +105,11 @@ li a {
 }
 
 .logo{
+  position: relative;
   width: 163px;
   height: auto;
-  padding-left: 2%;
-  padding-top: 2%;
+  top: 20px;
+  left:20px ;
 }
 
 .socials {
