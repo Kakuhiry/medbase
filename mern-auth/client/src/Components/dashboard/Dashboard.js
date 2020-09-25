@@ -43,7 +43,7 @@ class Dashboard extends Component {
                 </a>
               </li>
               <li>
-                <a className="btn-enclouser" href="">
+                <a className="btn-enclouser" href="/dashboard/search">
                   <div class="main-container">
                     <section>
                       <button class="btn btn-blue btn-border">

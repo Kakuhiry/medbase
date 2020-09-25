@@ -10,6 +10,14 @@ const Consult = require("../../models/Consult");
 /// @route POST api/users/register
 // @desc Register user
 // @access Public
+
+router.get("/search", (req, res) => {
+  usrName = req.body.name
+  User.find().then(function(consults){
+    res.send(consults).json
+  })
+})
+
 router.post("/consult", (req, res) => {
   // Form validation
   const { errors, isValid } = validateConsultInput(req.body);

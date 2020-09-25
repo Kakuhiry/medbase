@@ -13,6 +13,7 @@ import MainMenu from "./Components/dashboard/MainMenu"
 
 import { Provider } from "react-redux";
 import store from "./store";
+import Search from "./Components/Search";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -47,6 +48,7 @@ function App() {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path= "/menu" component= {MainMenu}/>
               <PrivateRoute exact path="/dashboard/Register" exact component={Register} />
+              <PrivateRoute exact path="/dashboard/Search" exact component={Search} />
             </Switch>
           </switch>
         </div>
