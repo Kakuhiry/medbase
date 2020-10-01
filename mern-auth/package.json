@@ -28,10 +28,12 @@
     "mongoose": "^5.10.5",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "regex": "^0.1.1",
     "validator": "^13.1.1"
   },
   "devDependencies": {

@@ -12,9 +12,10 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
+      bloodType: "",
       password: "",
       password2: "",
-      birthdate: "",
+      birthday: "",
       direction1: "",
       direction2: "",
       phoneNumber: "",
@@ -39,9 +40,10 @@ class Register extends Component {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
+      bloodType: this.state.bloodType,
       password: this.state.password,
       password2: this.state.password2,
-      birthdate: this.state.birthdate,
+      birthday: this.state.birthday,
       phoneNumber: this.state.phoneNumber,
       direction1: this.state.direction1,
       direction2: this.state.direction2,
@@ -136,16 +138,16 @@ class Register extends Component {
                     <div className="input-field col s12">
                       <input
                         onChange={this.onChange}
-                        value={this.state.birthdate}
-                        error={errors.birthdate}
-                        id="birthdate"
+                        value={this.state.birthday}
+                        error={errors.birthday}
+                        id="birthday"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.birthdate
+                          invalid: errors.birthday
                         })}
                       />
-                      <label htmlFor="birthdate">birthday</label>
-                      <span className="red-text">{errors.birthdate}</span>
+                      <label htmlFor="birthday">birthday (DD/MM/YYYY)</label>
+                      <span className="red-text">{errors.birthday}</span>
                     </div>
                   </div>
                   <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -225,6 +227,20 @@ class Register extends Component {
                       />
                       <label htmlFor="country">Country</label>
                       <span className="red-text">{errors.country}</span>
+                    </div>
+                    <div className="input-field col s12">
+                      <input
+                        onChange={this.onChange}
+                        value={this.state.bloodType}
+                        error={errors.bloodType}
+                        id="bloodType"
+                        type="text"
+                        className={classnames("", {
+                          invalid: errors.bloodType
+                        })}
+                      />
+                      <label htmlFor="Blood type">Blood type (optional)</label>
+                      <span className="red-text">{errors.bloodType}</span>
                     </div>
                   </div>
                 </form>

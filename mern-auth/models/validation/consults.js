@@ -7,9 +7,11 @@ module.exports = function validateConsultInput(data) {
   data.doctorID = !isEmpty(data.doctorID) ? data.doctorID : "";
   data.hospital = !isEmpty(data.hospital) ? data.hospital : "";
   data.doctor = !isEmpty(data.doctor) ? data.doctor : "";
+  data.reason = !isEmpty(data.reason) ? data.reason : "";
   data.patient = !isEmpty(data.patient) ? data.patient : "";
   data.description = !isEmpty(data.description) ? data.description : "";
   data.recipes = !isEmpty(data.recipes) ? data.recipes : "";
+  data.symptoms = !isEmpty(data.symptoms) ? data.symptoms : "";
 
   // Name checks
   if (Validator.isEmpty(data.userID)) {
@@ -29,12 +31,21 @@ module.exports = function validateConsultInput(data) {
   if (Validator.isEmpty(data.patient)) {
     errors.patient = "Patient field is required";
   }
+
+  if (Validator.isEmpty(data.reason)) {
+    errors.reason = "reason field is required";
+  }
+
   if (Validator.isEmpty(data.description)) {
     errors.description = "Description field is required";
   }
 
   if (Validator.isEmpty(data.recipes)) {
     errors.recipes = "recipes field is required";
+  }
+
+  if (Validator.isEmpty(data.symptoms)) {
+    errors.symptoms = "symptoms field is required";
   }
 
   return {

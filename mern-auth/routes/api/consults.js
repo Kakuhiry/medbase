@@ -11,16 +11,17 @@ const Consult = require("../../models/Consult");
 // @desc Register user
 // @access Public
 
-router.get("/search", (req, res) => {
-  usrName = req.body.name
-  User.find().then(function(consults){
-    res.send(consults).json
-  })
-})
+router.get("/search/:name", (req, res) => {
+  const usrName = req.params.name;
+  User.find({ name: new RegExp(usrName, 'i')}).then(function (consults) {
+    res.send(consults).json;
+  });
+});
 
 router.post("/consult", (req, res) => {
   // Form validation
   const { errors, isValid } = validateConsultInput(req.body);
+
   userid = req.body.userID;
   doctorid = req.body.doctorID;
   if (!isValid) {
@@ -40,10 +41,15 @@ router.post("/consult", (req, res) => {
             hospital: req.body.hospital,
             doctor: resultD.name,
             patient: result.name,
+            reason: req.body.reason,
+            symptoms: req.body.symptoms,
             description: req.body.description,
             recipes: req.body.recipes,
+
           });
+          console.log("khe diavlo")
           newConsult.save().then((newConsult) => res.json(newConsult));
+          res.send(200);
         }
       });
     }

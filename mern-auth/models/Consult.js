@@ -29,6 +29,14 @@ const ConsultSchema = new Schema({
     type: String, //Could later be converted to ObjectID
     required: true,
   },
+  reason: {
+    type: String,
+    required: true
+  },
+  symptoms: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,

@@ -8,7 +8,6 @@ import Dashboard from "./Components/dashboard/Dashboard.js"
 import LandingPage from "./Components/LandingPage.js";
 import Login from "./Components/Login.js";
 import Register from "./Components/Register";
-import NavBar from "./Components/Navbar";
 import MainMenu from "./Components/dashboard/MainMenu"
 
 import { Provider } from "react-redux";

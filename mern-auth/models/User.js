@@ -10,6 +10,12 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  
+  bloodType: {
+    type: String,
+    required: true
+  },
+
   password: {
     type: String,
     required: true,
@@ -22,7 +28,7 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  birthdate: {
+  birthday: {
     type: String,
     required: true,
   },

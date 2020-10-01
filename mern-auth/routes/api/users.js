@@ -32,11 +32,12 @@ router.post("/register", (req, res) => {
         password: req.body.password,
         password2: req.body.password2,
         phoneNumber: req.body.phoneNumber,
-        birthdate: req.body.birthdate,
+        birthday: req.body.birthday,
         direction1: req.body.direction1,
         country: req.body.country,
         hospital: req.body.hospital,
-        role: req.body.role
+        role: req.body.role,
+        bloodType: req.body.bloodType
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
@@ -73,10 +74,12 @@ router.post("/register/doctor", (req, res) => {
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
+        socialHC: req.body.socialHC,
+        bloodType: req.body.bloodType,
         password: req.body.password,
         password2: req.body.password2,
         phoneNumber: req.body.phoneNumber,
-        birthdate: req.body.birthdate,
+        birthday: req.body.birthday,
         direction1: req.body.direction1,
         country: req.body.country,
         role: req.body.role
@@ -140,7 +143,7 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           name: user.name,
-          role: user.role
+          role: user.role,
         };
         // Sign token
         jwt.sign(

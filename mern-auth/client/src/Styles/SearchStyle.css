@@ -1,0 +1,30 @@
+.results-wrapper {
+    bottom: 20px;
+    right: 10px;
+    list-style-type: none;
+    width: 1200px;
+}
+
+.usr-card {
+    display: inline-block;
+    border: 2px #DEDEDE solid;
+    background-color: #F6F6F6;
+    font-weight: 500;
+    width: 344px;
+    height: 400px;
+}
+
+#p-name {
+    margin: 32px 170px 30px 157px;
+}
+
+.modal-patient-name {
+    position: relative;
+    top: 500px
+}
+
+.cards {
+    margin: 20px;
+    font-size: 20px;
+    grid-area: card;
+}
