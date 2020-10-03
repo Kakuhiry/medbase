@@ -144,6 +144,7 @@ router.post("/login", (req, res) => {
           id: user.id,
           name: user.name,
           role: user.role,
+          workingHospital: user.workingHospital
         };
         // Sign token
         jwt.sign(

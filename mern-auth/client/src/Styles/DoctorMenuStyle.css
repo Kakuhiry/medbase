@@ -3,14 +3,15 @@
 }
 
 .doctor-name {
-    position: relative;
-    bottom: 40px;
-    right: 40px;
+	padding-top: 20px;
+	padding-left: 20px;
     opacity: 0.7;
 }
 
 .options-menu {
-    width: 400px;
+	padding-top: 40px;
+	padding-left: 100px;
+    width: 600px;
     height: 400px;
     position: relative;
     bottom: 50px;
@@ -26,7 +27,7 @@
     left: 280px;
     height: auto;
     position: relative;
-    bottom: 170px;
+    bottom: 100px;
 }
 
 .right-sec {
@@ -34,11 +35,12 @@
 }
 
 .main-logo {
-    position: relative;
+	position: relative;
+	right: 200px;
     width: 230px;
     height: auto;
-    bottom: 180px;
-    left: 200px;
+    bottom: 280px;
+    left: 835px;
 }
 
 .body-sec {

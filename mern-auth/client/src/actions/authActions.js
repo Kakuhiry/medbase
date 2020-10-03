@@ -8,17 +8,17 @@ export function registerUser(userData, history) {
     axios
       .post("/api/users/register", userData)
       .then((res) => history.push("/login")) // re-direct to login on successful register
-      .catch((err) => dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data,
-      })
+      .catch((err) =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data,
+        })
       );
   };
 }
 
-
 export const registerConsult = (newConsult, history) => (dispatch) => {
-  console.log("disaster?")
+  
   axios
     .post("/api/consults/consult", newConsult)
     .then((res) => history.push("/login")) // re-direct to login on successful register

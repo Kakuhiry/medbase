@@ -10,7 +10,7 @@ class RegisterConsult extends Component {
   constructor() {
     super();
     this.state = {
-      Hospital: "Super hospital la fogatak",
+      hospital: "Super hospital la fogata",
       description: "",
       recipes: "",
       symptoms: "",
@@ -33,19 +33,17 @@ class RegisterConsult extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const {user} = this.props.auth
-    console.log("is the problem here?")
     const newConsult = {
       userID: this.props.patient._id,
       doctorID: user.id,
       doctor: user.name,
-      hospital: "super hospital la fogata",
+      hospital: this.state.hospital,
       patient: this.props.patient.name,
       reason: this.state.reason,
       description: this.state.description,
       recipes: this.state.recipes,
       symptoms: this.state.symptoms,
     };
-    console.log("do we actually get here?")
     this.props.registerConsult(newConsult, this.props.history);
     console.log(newConsult);
   };

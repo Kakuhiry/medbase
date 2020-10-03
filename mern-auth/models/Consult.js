@@ -23,11 +23,11 @@ const ConsultSchema = new Schema({
   },
   doctor: {
     type: String,
-    required: true,
+    required: false,
   },
   patient: {
     type: String, //Could later be converted to ObjectID
-    required: true,
+    required: false,
   },
   reason: {
     type: String,

@@ -6,7 +6,13 @@
     height: auto;
 }
 
+.container-valign-wrapper {
+    margin: 4%;
+}
 
+body {
+    background-image: linear-gradient(to right bottom, #ffffff, #edeff2, #d9dfe6, #c3d1d7, #adc3c6)
+}
 
 .history-text {
     position: relative;
@@ -24,10 +30,6 @@
     position: relative;
     right: 15px;
     bottom: 80px;
-}
-
-.container-valign-wrapper{ 
-    margin: 4%;
 }
 
 .filter {
