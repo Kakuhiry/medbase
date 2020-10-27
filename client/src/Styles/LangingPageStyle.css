@@ -67,7 +67,7 @@ li a {
 .main-text-left{
   font-size: 60px;
   width: 100%;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 
@@ -157,7 +157,9 @@ li img {
   padding-right: 200px;
 }
 
-
+.secondary-text-left {
+  padding-top: 30px;
+}
 
 .btn1 {
   letter-spacing: 0.1em;
@@ -184,6 +186,11 @@ li img {
   position: relative;
   transition-duration: 0.4s;
   overflow: hidden;
+  height: 44px;
+}
+
+.join-btn {
+  padding-top: 10px;
 }
 
 .effect04::before,

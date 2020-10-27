@@ -51,11 +51,10 @@ class RegisterConsult extends Component {
     const { errors } = this.state;
     return (
       <div className="container">
-        <h1>{this.props.patient.name}</h1>
         <Navbar />
         <div className="row">
           <div className="back-btn">
-            <Link to="/dashboard" className="btn-flat waves-effect">
+            <Link to= "/dashboard" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link>
@@ -66,7 +65,7 @@ class RegisterConsult extends Component {
                 <b>Register</b> below
               </h4>
               <p className="grey-text text-darken-1">
-                Insert your information in the fields below
+                Insert the details in the fields below
               </p>
             </div>
           </div>
@@ -159,7 +158,7 @@ class RegisterConsult extends Component {
                       type="submit"
                       className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                     >
-                      Sign up
+                      Submit
                     </button>
                   </div>
                 </form>

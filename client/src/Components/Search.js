@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
-import { Link, useHistory, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import "../Styles/SearchStyle.css";
 import RegisterConsultPage from "./RegisterConsult";
@@ -57,7 +57,6 @@ class Search extends React.Component {
         )
       )
       .then(() => {
-
         return (
           <div>
             <h1>The consult have been registered successfully</h1>
@@ -70,16 +69,14 @@ class Search extends React.Component {
   };
 
   onChange = (e) => {
-    {
-      this.setState(
-        {
-          name: e.target.value,
-        },
-        () => {
-          console.log();
-        }
-      );
-    }
+    this.setState(
+      {
+        name: e.target.value,
+      },
+      () => {
+        console.log();
+      }
+    );
   };
   render() {
     return (
@@ -89,7 +86,7 @@ class Search extends React.Component {
           style={{ display: "list-item", height: "230px" }}
         >
           <div className="back-btn">
-            <Link to="/dashboard/search" className="btn-flat waves-effect">
+            <Link to="/dashboard" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link>
@@ -167,7 +164,6 @@ class Search extends React.Component {
                     >
                       <li className="cards" id="p-name">
                         <b>{item.name.toString()}</b>
-                        <h1>{item._id}</h1>
                       </li>
                       <br />
                       <li className="cards" id="bhd">

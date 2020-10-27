@@ -32,7 +32,7 @@ class Dashboard extends Component {
                 </a>
               </li>
               <li>
-                <a className="btn-enclouser" href="">
+                <a className="btn-enclouser" href="/dashboard">
                   <div class="main-container">
                     <section>
                       <button class="btn btn-blue btn-border">
@@ -54,7 +54,7 @@ class Dashboard extends Component {
                 </a>
               </li>
               <li>
-                <a className="btn-enclouser" href="">
+                <a className="btn-enclouser" href="/login">
                   <div class="main-container">
                     <section>
                       <button

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions";
 import classnames from "classnames";
 import Navbar from "./Navbar.js"
+import "../Styles/Login.css"
 class Login extends Component {
   constructor() {
     super();
@@ -32,9 +33,9 @@ class Login extends Component {
 
     
     if (nextProps.auth.isAuthenticated) {
-      if(user.role == "Doctor")
+      if(user.role === "Doctor")
         this.props.history.push("/dashboard");
-      if(user.role == "Patient")
+      if(user.role === "Patient")
         this.props.history.push("/menu"); // push user to dashboard when they login
     }
     if (nextProps.errors) {
@@ -74,7 +75,6 @@ class Login extends Component {
                 <b>Login</b> below
               </h4>
               <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>

@@ -46,8 +46,8 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path= "/menu" component= {MainMenu}/>
-              <PrivateRoute exact path="/dashboard/Register" exact component={Register} />
-              <PrivateRoute exact path="/dashboard/Search" exact component={Search} />
+              <PrivateRoute exact path="/dashboard/register" component={Register} />
+              <PrivateRoute exact path="/dashboard/search" component={Search} />
             </Switch>
           </switch>
         </div>

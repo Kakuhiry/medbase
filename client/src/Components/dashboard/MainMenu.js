@@ -56,22 +56,22 @@ class MainMenu extends Component {
         <div className="filters">
           <ul>
             <li>
-              <a className="filter" href="">
+              <a className="filter" href="/Dashboard">
                 Esta semana
               </a>
             </li>
             <li>
-              <a className="filter" href="">
+              <a className="filter" href="/Dashboard">
                 Este mes
               </a>
             </li>
             <li>
-              <a className="filter" href="">
+              <a className="filter" href="/Dashboard">
                 Este año
               </a>
             </li>
             <li>
-              <a className="filterr" href="">
+              <a className="filterr" href="/Dashboard">
                 Personalizar
               </a>
             </li>
