@@ -3,6 +3,26 @@
     right: 10px;
     list-style-type: none;
     width: 1200px;
+    padding-left: 40px;
+}
+
+.logo {
+    margin-left: 40px;
+}
+
+
+.profile-pic {
+    margin: 160px;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    bottom: 20px;
+}
+
+.results {
+    overflow-y: auto;
+    height: 600px;
+    width: 1200px;
 }
 
 .usr-card {
@@ -11,11 +31,21 @@
     background-color: #F6F6F6;
     font-weight: 500;
     width: 344px;
-    height: 400px;
+    height: 200px;
 }
 
 #p-name {
-    margin: 32px 170px 30px 157px;
+    text-align: center;
+    width: 250px;
+    padding-left: 55px;
+    position: relative;
+    bottom: 55px;
+}
+
+.show-model-btn {
+    padding-left: 220px;
+    position: relative;
+    bottom: 30px;
 }
 
 .modal-patient-name {

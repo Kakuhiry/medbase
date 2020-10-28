@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import "../Styles/SearchStyle.css";
 import RegisterConsultPage from "./RegisterConsult";
+import { Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 class Search extends React.Component {
   constructor() {
@@ -162,20 +164,12 @@ class Search extends React.Component {
                       className="usr-card"
                       style={{ margin: "20px" }}
                     >
+                    <Avatar className= "profile-pic" size={128} icon={<UserOutlined />} />
                       <li className="cards" id="p-name">
                         <b>{item.name.toString()}</b>
                       </li>
                       <br />
-                      <li className="cards" id="bhd">
-                        birthday: {item.birthdate}
-                      </li>
-                      <li className="cards" id="dir1">
-                        direction1: {item.direction1.toString()}
-                      </li>
-                      <li className="cards" id="phone-num">
-                        phone number: {item.phoneNumber.toString()}
-                      </li>
-                      <button onClick={() => this.openPatientModal(item)}>
+                      <button className= "show-model-btn" onClick={() => this.openPatientModal(item)}>
                         Show Modal
                       </button>
                     </ul>
