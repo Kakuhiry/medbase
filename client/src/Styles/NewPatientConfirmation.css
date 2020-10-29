@@ -1,0 +1,14 @@
+.confirmation-img {
+    margin-left: 650px;
+    margin-top: 100px;
+    width: 400px;
+    height: 400px;
+}
+
+.confirmation-text-wrapper {
+    text-align: center;
+}
+
+.close-btn-wrapper {
+    align-content: center;
+}

@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
-import Navbar from "./Navbar.js"
+import Navbar from "./Navbar.js";
+import ConfirmationPage from "./NewPatientConfirmation.js";
+import Modal from "react-modal";
 import "../Styles/RegisterStyle.css";
 class Register extends Component {
   constructor() {
@@ -21,17 +23,18 @@ class Register extends Component {
       phoneNumber: "",
       country: "",
       errors: {},
+      submitedForm: false,
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
-        errors: nextProps.errors
+        errors: nextProps.errors,
       });
     }
   }
-  
+
   onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
@@ -49,13 +52,19 @@ class Register extends Component {
       direction2: this.state.direction2,
       country: this.state.country,
     };
-    this.props.registerUser(newUser, this.props.history); 
+    this.props.registerUser(newUser, this.props.history);
+    this.setState((state) => {
+      return {
+        ...state,
+        submitedForm: true
+      };
+    });
   };
   render() {
     const { errors } = this.state;
     return (
       <div className="container">
-      <Navbar/>
+        <Navbar />
         <div className="row">
           <div className="back-btn">
             <Link to="/dashboard" className="btn-flat waves-effect">
@@ -63,6 +72,11 @@ class Register extends Component {
               home
             </Link>
           </div>
+          {this.state.submitedForm ? (
+            <Modal isOpen={this.state.submitedForm}>
+              <ConfirmationPage />
+            </Modal>
+          ) : null}
           <div className="register-text">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
@@ -73,7 +87,6 @@ class Register extends Component {
               </p>
             </div>
           </div>
-
           <div className="register-area">
             <div className="left-sec">
               <div className="col s8 offset-s2">
@@ -87,7 +100,7 @@ class Register extends Component {
                         id="name"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.name
+                          invalid: errors.name,
                         })}
                       />
                       <label htmlFor="name">Name</label>
@@ -100,7 +113,7 @@ class Register extends Component {
                         id="email"
                         type="email"
                         className={classnames("", {
-                          invalid: errors.email
+                          invalid: errors.email,
                         })}
                       />
                       <label htmlFor="email">Email</label>
@@ -114,7 +127,7 @@ class Register extends Component {
                         id="password"
                         type="password"
                         className={classnames("", {
-                          invalid: errors.password
+                          invalid: errors.password,
                         })}
                       />
                       <label htmlFor="password">Password</label>
@@ -128,7 +141,7 @@ class Register extends Component {
                         id="password2"
                         type="password"
                         className={classnames("", {
-                          invalid: errors.password2
+                          invalid: errors.password2,
                         })}
                       />
                       <label htmlFor="password2">Confirm Password</label>
@@ -142,14 +155,13 @@ class Register extends Component {
                         id="birthday"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.birthday
+                          invalid: errors.birthday,
                         })}
                       />
                       <label htmlFor="birthday">birthday (DD/MM/YYYY)</label>
                       <span className="red-text">{errors.birthday}</span>
                     </div>
-                  </div>
-                  <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                    <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                     <button
                       style={{
                         width: "150px",
@@ -162,6 +174,7 @@ class Register extends Component {
                     >
                       Sign up
                     </button>
+                  </div>
                   </div>
                 </form>
               </div>
@@ -178,12 +191,11 @@ class Register extends Component {
                         id="direction1"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.direction1
+                          invalid: errors.direction1,
                         })}
                       />
                       <label htmlFor="direction1">Direction 1</label>
                       <span className="red-text">{errors.direction1}</span>
-
                     </div>
                     <div className="input-field col s12">
                       <input
@@ -193,7 +205,7 @@ class Register extends Component {
                         id="direction2"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.direction2
+                          invalid: errors.direction2,
                         })}
                       />
                       <label htmlFor="direction2">Direction 2 (optional)</label>
@@ -207,7 +219,7 @@ class Register extends Component {
                         id="phoneNumber"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.phoneNumber
+                          invalid: errors.phoneNumber,
                         })}
                       />
                       <label htmlFor="phoneNumber">Phone number</label>
@@ -221,7 +233,7 @@ class Register extends Component {
                         id="country"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.country
+                          invalid: errors.country,
                         })}
                       />
                       <label htmlFor="country">Country</label>
@@ -235,7 +247,7 @@ class Register extends Component {
                         id="bloodType"
                         type="text"
                         className={classnames("", {
-                          invalid: errors.bloodType
+                          invalid: errors.bloodType,
                         })}
                       />
                       <label htmlFor="Blood type">Blood type (optional)</label>
@@ -255,13 +267,10 @@ class Register extends Component {
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
 };
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 });
-export default connect(
-  mapStateToProps,
-  { registerUser }
-)(withRouter(Register));
+export default connect(mapStateToProps, { registerUser })(withRouter(Register));

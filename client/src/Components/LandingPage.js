@@ -14,13 +14,13 @@ function LandingPage() {
           <div className="nav-bar-left">
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a className= "nav-home" href="/">Home</a>
               </li>
               <li>
-                <a href="/">About</a>
+                <a className= "nav-about" href="/">About</a>
               </li>
               <li>
-                <a href="/">Contact</a>
+                <a className= "nav-contact" href="/">Contact</a>
               </li>
             </ul>
           </div>

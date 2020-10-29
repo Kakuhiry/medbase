@@ -5,6 +5,7 @@
 .back-btn {
     position: relative;
     padding-top: 50px;
+    right: 220px;
 }
 
 .register-text {
@@ -19,10 +20,15 @@
     display: flex;
     position: relative;
     right: 850px;
-    padding-top: 150px;
+    padding-top: 50px;
+    z-index: 0;
 }
 
 .navbar-fixed {
-    right: 350px;
+    right: 380px;
 }
 
+
+.col .s12 {
+    z-index: 0;
+}

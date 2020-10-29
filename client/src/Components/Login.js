@@ -35,8 +35,10 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       if(user.role === "Doctor")
         this.props.history.push("/dashboard");
+        window.location.reload();
       if(user.role === "Patient")
-        this.props.history.push("/menu"); // push user to dashboard when they login
+        this.props.history.push("/menu");
+        window.location.reload(); // push user to dashboard when they login
     }
     if (nextProps.errors) {
       this.setState({
@@ -58,7 +60,6 @@ class Login extends Component {
   };
   render() {
 
-    
     const { errors } = this.state;
     return (
       <div className="container">
