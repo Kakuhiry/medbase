@@ -6,7 +6,6 @@ module.exports = function validateRegisterInput(data) {
   data.name = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.socialHC = !isEmpty(data.socialHC) ? data.socialHC : "N/A";
-  data.bloodType = !isEmpty(data.bloodType) ? data.bloodType : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
   data.phoneNumber = !isEmpty(data.phoneNumber) ? data.phoneNumber : "";
@@ -23,10 +22,6 @@ module.exports = function validateRegisterInput(data) {
     errors.email = "Email field is required";
   } else if (!Validator.isEmail(data.email)) {
     errors.email = "Email is invalid";
-  }
-
-  if (Validator.isEmpty(data.bloodType)) {
-    errors.bloodType = "Blood type field is required";
   }
   // Password checks
   if (Validator.isEmpty(data.password)) {

@@ -5,9 +5,8 @@ import { connect } from "react-redux";
 import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
 import Navbar from "./Navbar.js";
-import ConfirmationPage from "./NewPatientConfirmation.js";
-import Modal from "react-modal";
 import "../Styles/RegisterStyle.css";
+import isEmpty from "is-empty";
 class Register extends Component {
   constructor() {
     super();
@@ -38,6 +37,8 @@ class Register extends Component {
   onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
+
+
   onSubmit = (e) => {
     e.preventDefault();
     const newUser = {
@@ -52,14 +53,17 @@ class Register extends Component {
       direction2: this.state.direction2,
       country: this.state.country,
     };
-    this.props.registerUser(newUser, this.props.history);
-    this.setState((state) => {
-      return {
-        ...state,
-        submitedForm: true
-      };
-    });
+    
+    setTimeout(() => {
+      console.log("nommg")
+      if(isEmpty(this.state.errors)){
+        console.log("simmg")
+        this.setState({...this.state, submitedForm: true }, console.log("mmg"))
+      }
+  }, 2500);
+  this.props.registerUser(newUser, this.props.history);
   };
+  
   render() {
     const { errors } = this.state;
     return (
@@ -72,11 +76,6 @@ class Register extends Component {
               home
             </Link>
           </div>
-          {this.state.submitedForm ? (
-            <Modal isOpen={this.state.submitedForm}>
-              <ConfirmationPage />
-            </Modal>
-          ) : null}
           <div className="register-text">
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
@@ -263,6 +262,7 @@ class Register extends Component {
     );
   }
 }
+
 
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,

@@ -13,7 +13,7 @@ const UserSchema = new Schema({
   
   bloodType: {
     type: String,
-    required: true
+    required: false
   },
 
   password: {

@@ -9,6 +9,7 @@ import LandingPage from "./Components/LandingPage.js";
 import Login from "./Components/Login.js";
 import Register from "./Components/Register";
 import MainMenu from "./Components/dashboard/MainMenu"
+import CreatedUser from "./Components/NewPatientConfirmation"
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -47,6 +48,7 @@ function App() {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path= "/menu" component= {MainMenu}/>
               <PrivateRoute exact path="/dashboard/register" component={Register} />
+              <PrivateRoute exact path="/dashboard/register/success" component={CreatedUser} />
               <PrivateRoute exact path="/dashboard/search" component={Search} />
             </Switch>
           </switch>
