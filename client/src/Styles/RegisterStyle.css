@@ -3,7 +3,8 @@
 }
 
 .back-btn {
-    position: relative;
+    z-index: 0;
+    padding-left: 30px;
     padding-top: 50px;
     right: 220px;
 }

@@ -5,4 +5,5 @@
 
 .btn .btn-large .waves-effect .waves-light .hoverable .blue .accent-3 {
     height: 200px;
+    z-index: 0;
 }

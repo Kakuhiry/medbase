@@ -47,7 +47,7 @@ class Register extends Component {
       bloodType: this.state.bloodType,
       password: this.state.password,
       password2: this.state.password2,
-      birthday: this.state.birthday,
+      birthday: new Date(this.state.birthday),
       phoneNumber: this.state.phoneNumber,
       direction1: this.state.direction1,
       direction2: this.state.direction2,
@@ -157,7 +157,7 @@ class Register extends Component {
                           invalid: errors.birthday,
                         })}
                       />
-                      <label htmlFor="birthday">birthday (DD/MM/YYYY)</label>
+                      <label htmlFor="birthday">birthday (MM/DD/YYYY)</label>
                       <span className="red-text">{errors.birthday}</span>
                     </div>
                     <div className="col s12" style={{ paddingLeft: "11.250px" }}>

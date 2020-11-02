@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import "../Styles/SearchStyle.css";
 import RegisterConsultPage from "./RegisterConsult";
-import { Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import Axios from "axios";
 
 class Search extends React.Component {
   constructor() {
@@ -16,6 +17,7 @@ class Search extends React.Component {
       isModalOpen: false,
       isRegisterConsultaModalOpen: false,
       currentPatient: null,
+      foundConsults: [],
     };
   }
 
@@ -28,6 +30,16 @@ class Search extends React.Component {
         currentPatient: patient,
       };
     });
+  };
+
+  openConsultHistoryModal = (patient) => {
+    Axios.get(
+      `http://localhost:3000/api/consults/searchConsult/${patient._id}`
+    ).then((res) =>
+      this.setState({ foundConsults: res.data }, () =>
+        console.log(this.state.foundConsults)
+      )
+    );
   };
 
   openRegisterConsultModal = (patient) => {
@@ -164,74 +176,128 @@ class Search extends React.Component {
                       className="usr-card"
                       style={{ margin: "20px" }}
                     >
-                    <Avatar className= "profile-pic" size={128} icon={<UserOutlined />} />
+                      <Avatar
+                        className="profile-pic"
+                        size={128}
+                        icon={<UserOutlined />}
+                      />
                       <li className="cards" id="p-name">
                         <b>{item.name.toString()}</b>
                       </li>
                       <br />
-                      <button className= "show-model-btn" onClick={() => this.openPatientModal(item)}>
+                      <button
+                        className="show-model-btn"
+                        onClick={() => {
+                          this.openPatientModal(item);
+                          this.openConsultHistoryModal(item);
+                        }}
+                      >
                         Show Modal
                       </button>
                     </ul>
                   );
                 })}
               </ul>
-              {this.state.isModalOpen ? (
-                <Modal isOpen={this.state.isModalOpen} style={{}}>
-                  <div
-                    className="modal-patient-name"
-                    style={{
-                      fontSize: "40px",
-                      position: "relative",
-                      left: "40px",
-                    }}
-                  >
-                    <b>Name: </b> {this.state.currentPatient.name}
-                  </div>
-                  <div
-                    className="modal-patient-name"
-                    style={{
-                      fontSize: "40px",
-                      position: "relative",
-                      left: "40px",
-                    }}
-                  >
-                    <b>Birthday: </b> {this.state.currentPatient.birthdate}
-                  </div>
-                  <div></div>
-                  <div>Birthday = {this.state.currentPatient.birthdate}</div>
-                  <button
-                    onClick={() => this.hideModal()}
-                    style={{
-                      position: "relative",
-                      top: "600px",
-                      left: "40px",
-                      backgroundColor: "transparent",
-                      border: "none",
-                    }}
-                  >
-                    Close
-                  </button>
-                  <button
-                    style={{
-                      position: "relative",
-                      fontWeight: "500",
-                      color: "green",
-                      fontSize: "50px",
-                      backgroundColor: "transparent",
-                      border: "none",
-                      top: "600px",
-                      left: "1230px",
-                    }}
-                    onClick={() => {
-                      this.openRegisterConsultModal(this.state.currentPatient);
-                    }}
-                  >
-                    <b>Create new consult</b>
-                  </button>
-                </Modal>
-              ) : null}
 
+              <div className="scrollable-div">
+                {this.state.isModalOpen ? (
+                  <Modal className= "patient-modal" isOpen={this.state.isModalOpen} style={{}}>
+                    <h1 className="consult-history-text">Consult history</h1>
+                    <div className="modal-patient-consults">
+                      {this.state.foundConsults.map((item, key) => {
+                        return (
+                          <div className="consults-box">
+                            <div className="consult-result-wrapper">
+                              <div
+                                className="consult-result-card"
+                                key={key}
+                                style={{
+                                  margin: "20px",
+                                }}
+                              >
+                                <ul>
+                                  <li
+                                    style={{
+                                      marginRight: "20px",
+                                      opacity: 1,
+                                      color: "black",
+                                    }}
+                                  >
+                                    <b>Doctor:</b> {item.doctor} <b> </b>
+                                  </li>
+                                  <li style={{ marginRight: "20px" }}>
+                                    <b>Reason:</b> {item.reason}
+                                  </li>
+                                  <li style={{ marginRight: "20px" }}>
+                                    <b>Date: </b> {item.date}
+                                  </li>
+                                  <li style={{ marginRight: "20px" }}>
+                                    <b>Symptoms: </b> {item.symptoms}
+                                  </li>
+                                  <li style={{ marginRight: "20px" }}>
+                                    <b>Recipes : </b> {item.recipes}
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div
+                      className="modal-patient-name"
+                      style={{
+                        fontSize: "40px",
+                        position: "relative",
+                        left: "40px",
+                      }}
+                    >
+                      <b>Name: </b> {this.state.currentPatient.name}
+                    </div>
+                    <div
+                      className="modal-patient-name"
+                      style={{
+                        fontSize: "40px",
+                        position: "relative",
+                        left: "40px",
+                      }}
+                    >
+                      <b>Birthday: </b> {this.state.currentPatient.birthdate}
+                    </div>
+                    <button
+                      onClick={() => this.hideModal()}
+                      style={{
+                        position: "relative",
+                        top: "600px",
+                        left: "40px",
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }}
+                    >
+                      Close
+                    </button>
+                    <button
+                      style={{
+                        position: "relative",
+                        fontWeight: "500",
+                        color: "green",
+                        fontSize: "50px",
+                        backgroundColor: "transparent",
+                        border: "none",
+                        top: "600px",
+                        left: "1230px",
+                      }}
+                      onClick={() => {
+                        this.openRegisterConsultModal(
+                          this.state.currentPatient
+                        );
+                      }}
+                    >
+                      <b>Create new consult</b>
+                    </button>
+                  </Modal>
+                ) : null}
+              </div>
               {this.state.isRegisterConsultaModalOpen ? (
                 <Modal isOpen={this.state.isRegisterConsultaModalOpen}>
                   <RegisterConsultPage patient={this.state.currentPatient} />
