@@ -33,3 +33,7 @@
 .col .s12 {
     z-index: 0;
 }
+
+.container {
+    height: 800px;
+}

@@ -76,7 +76,7 @@
 
 .consult-history-text {
     position: relative;
-    top: 60px
+    top: 24px
 }
 
 .scrollable-div {
@@ -96,4 +96,14 @@
     outline: none;
     padding: 20px;
     overflow: hidden;
+}
+
+.new-consult-text {
+    bottom: 60px;
+    position: relative;
+}
+
+.close-btn {
+    position: relative;
+    bottom: 60px;
 }

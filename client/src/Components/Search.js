@@ -60,6 +60,7 @@ class Search extends React.Component {
       isModalOpen: false,
     }));
   };
+  
 
   onSubmit = (e) => {
     axios
@@ -81,6 +82,13 @@ class Search extends React.Component {
         );
       });
   };
+
+  handleOnEnterSearch(e) {
+    if (e.key === 'Enter') {
+      console.log("lol");
+      this.onSubmit()
+    }
+  }
 
   onChange = (e) => {
     this.setState(
@@ -127,6 +135,7 @@ class Search extends React.Component {
             >
               <input
                 onChange={this.onChange}
+                onKeyUp= {this.handleOnEnterSearch.bind(this)}
                 type="text"
                 id="name"
                 value={this.state.name}
@@ -266,9 +275,10 @@ class Search extends React.Component {
                     </div>
                     <button
                       onClick={() => this.hideModal()}
+                      className= "close-btn"
                       style={{
                         position: "relative",
-                        top: "600px",
+                        top: "545px",
                         left: "40px",
                         backgroundColor: "transparent",
                         border: "none",
@@ -293,7 +303,7 @@ class Search extends React.Component {
                         );
                       }}
                     >
-                      <b>Create new consult</b>
+                      <b className= "new-consult-text">Create new consult</b>
                     </button>
                   </Modal>
                 ) : null}
